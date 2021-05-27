@@ -104,9 +104,17 @@ export class MDLFile {
         // read bones
         reader.setOffset(this.header.boneindex);
         this.bones = [];
+        // Fix for the name parameter of KeyframeTrack
+        // @see https://threejs.org/docs/index.html#api/en/animation/KeyframeTrack.name
+        let fixName = (s: string): string => {
+            s = s.replaceAll('[', '_');
+            s = s.replaceAll(']', '_');
+            s = s.replaceAll('.', '_');
+            return s;
+        }
         for (let i = 0; i < this.header.numbones; i++) {
             let a = new StudioBone();
-            a.name = reader.readString(32);
+            a.name = fixName(reader.readString(32));
             a.parent = reader.readInt32();
             a.flags = reader.readUint32();
             a.bonecontroller = reader.readInt32Array(6);
