@@ -1,3 +1,7 @@
+## Screenshot
+
+![screenshot](screenshot.gif)
+
 ## Building
 
 First install dependencies:
