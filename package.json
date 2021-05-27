@@ -1,0 +1,22 @@
+{
+  "name": "hlmv-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-dev": "webpack --mode development",
+    "build-prod": "webpack --mode production"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "three": "^0.128.0"
+  },
+  "devDependencies": {
+    "@types/three": "^0.128.0",
+    "ts-loader": "^9.2.2",
+    "typescript": "^4.2.4",
+    "webpack": "^5.37.1",
+    "webpack-cli": "^4.7.0"
+  }
+}
